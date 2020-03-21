@@ -23,7 +23,7 @@ def directors_totals(nds)
   nameSearch = 0
   while nameSearch < nds.count
    directorName = nds[nameSearch][:name]
-    result[directorName] = gross_for_director(directors_database)
+    result[directorName] = gross_for_director(directors_data)
     nameSearch += 1
   end
   result
