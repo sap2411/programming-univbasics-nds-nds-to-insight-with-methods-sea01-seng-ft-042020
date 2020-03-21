@@ -21,6 +21,18 @@ end
 # { directorOne => allTheMoneyTheyMade, ... }
 def directors_totals(nds)
   result = {}
-  
+  nameSearch = 0
+  while nameSearch < nds.count
+   directorName = nds[nameSearch][:name]
+   moviesCombinedTotal = 0
+   movieSearch = 0 
+   while movieSearch < nds[nameSearch][:movies].count
+   movieGross = nds[nameSearch][:movies][movieSearch][:worldwide_gross]
+    moviesCombinedTotal += movieGross
+    movieSearch += 1
+    end
+    result[directorName] = gross_for_director(director_data)
+    nameSearch += 1
+  end
   result
 end
